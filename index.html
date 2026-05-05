@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turkish TV Live Channels</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Turkish TV Live Channels</h1>
+    <p>Select a channel below and play a live stream.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="form-row">
+        <label for="channel-search">Search channels</label>
+        <input id="channel-search" type="search" placeholder="Search by name or genre" />
+      </div>
+      <div class="form-row">
+        <label for="channel-select">Choose a channel</label>
+        <select id="channel-select"></select>
+        <button id="play-button">Play Channel</button>
+      </div>
+      <div class="form-row">
+        <label for="custom-url">Paste a live stream URL</label>
+        <input id="custom-url" type="url" placeholder="https://example.com/stream.m3u8" />
+        <button id="load-custom-button">Load Custom URL</button>
+      </div>
+      <div class="form-row">
+        <label for="channel-file">Load channels from a local JSON file</label>
+        <input id="channel-file" type="file" accept="application/json" />
+        <button id="load-file-button">Load File</button>
+      </div>
+      <div class="form-row action-row">
+        <span id="channel-count">Channels: 0</span>
+        <label class="favorites-toggle">
+          <input id="show-favorites-only" type="checkbox" /> Show favorites only
+        </label>
+        <button id="favorite-button">Toggle Favorite</button>
+        <button id="reset-default-button">Reset Defaults</button>
+        <button id="clear-storage-button">Clear Saved Channels</button>
+      </div>
+      <div class="form-row add-channel-row">
+        <label>Add a new channel</label>
+        <input id="add-name" type="text" placeholder="Channel name" />
+        <input id="add-description" type="text" placeholder="Description" />
+        <select id="add-type">
+          <option value="video">Video</option>
+          <option value="audio">Audio</option>
+        </select>
+        <input id="add-url" type="url" placeholder="Stream URL" />
+        <button id="add-channel-button">Add Channel</button>
+      </div>
+    </section>
+
+    <section class="player">
+      <video id="tv-player" controls playsinline></video>
+      <audio id="radio-player" controls hidden></audio>
+      <div id="channel-info"></div>
+    </section>
+
+    <section class="notes">
+      <h2>Important Note</h2>
+      <p>
+        This app is a starter template. Web browsers cannot directly receive radio, TV broadcast, or Bluetooth signals.
+        To watch actual Turkish TV channels, you need valid stream URLs from licensed providers.
+      </p>
+      <p>
+        Replace the placeholder stream URLs in <code>script.js</code> with real HLS/MPEG-DASH URLs from legal sources.
+      </p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0/dist/hls.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

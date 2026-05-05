@@ -1,0 +1,29 @@
+{
+  "name": "turkish-tv-live",
+  "version": "1.0.0",
+  "description": "Turkish live TV channels starter app packaged as a Windows executable.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.3.0",
+    "electron-builder": "^24.6.0",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.example.turkishtvlive",
+    "productName": "Turkish TV Live",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  }
+}
