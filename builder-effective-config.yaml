@@ -1,0 +1,12 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.example.turkishtvlive
+productName: Turkish TV Live
+files:
+  - filter:
+      - '**/*'
+win:
+  target:
+    - nsis
+electronVersion: 26.6.10
